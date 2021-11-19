@@ -28,7 +28,7 @@ class DiegoProgram:
         print(usernames)
 
     def enter_usernames(self):
-        size = int(input("entra numero de usuario que quieres agregar"))
+        size = int(input("entra numero de usuarios que quieras agregar"))
         usernames = ["diego", "nana"]
 
         for i in range(0, size):
@@ -36,13 +36,16 @@ class DiegoProgram:
             usernames.append(name)
 
         print(usernames)
-        option = int(input("entra cero para salir y uno para continuar"))
+        option = int(input('''
+        entra cero para ir a menu principal, y uno de borrar usuarios.
+        
+        '''))
         while option != 0:
             print(usernames)
             name = input("entra un nombre a borrar")
             usernames.remove(name)
             print(usernames)
-            option = int(input("entra cero para salir y uno para continuar"))
+            option = int(input("entra cero para salir y uno para continuar borrando"))
 
         print("has salido, gracias por usar el programa")
 
@@ -52,7 +55,11 @@ if __name__ == '__main__':
     option = int(input("entra cero para salir y uno para continuar"))
 
     while option != 0:
-        menu = int(input("1-Suma, 2-square"))
+        menu = int(input('''
+        1-Suma de dos numeros
+        2-square of a number
+        3- users
+        4- enter_Users'''))
         if menu == 1:
 
             suma = test.add()
@@ -61,9 +68,12 @@ if __name__ == '__main__':
         elif menu ==2:
             numero = int(input("enter a number"))
             test.calcsquare(numero)
+        elif menu ==3:
+            test.usernames()
+        elif menu ==4:
+            test.enter_usernames()
+            
 
         option = int(input("entra cero para salir y uno para continuar"))
 
     print("Thanks for using this piece of software")
-
-
